@@ -1,0 +1,11 @@
+<h1>users group index</h1>
+<%if !@groups.nil?%> 
+    <hr/>
+    <%@groups.each do |i|%>
+        <%= image_tag(i.icon, size: '75x75')%>
+        <%=i.name%>
+    <%end%>
+    <hr/>
+<%end%>
+
+<%=link_to "create new", new_group_path, :class=> "btn",:id=>"button-login"%>

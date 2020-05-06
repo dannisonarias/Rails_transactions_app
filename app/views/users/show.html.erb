@@ -1,0 +1,19 @@
+<%= image_tag(current_user.image, size: '100x100') unless current_user.image.nil? %>
+<%=current_user.name%>
+<hr>
+<%=link_to user_transactions_path(current_user) do%>
+<p>My Transactions by Category</p>
+<%end%>
+<hr>
+<%=link_to "/" do%>
+    <p>My Other Transactions</p>
+<%end%>
+
+<hr>
+<%=link_to groups_path(@user) do%>
+    <p>Show Categories</p>
+<%end%>
+
+
+
+

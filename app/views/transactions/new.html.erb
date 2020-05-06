@@ -1,0 +1,16 @@
+<h1>Transactions#new</h1>
+
+<%= form_with model: @transaction,url: user_transactions_path,:method=>"post" do |f| %>
+<hr>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name%>
+  </div>
+<hr>
+  <div class="field">
+    <%= f.label :amount %><br/>
+    <%= f.number_field :amount%>
+  </div>
+<hr>
+  <%= f.submit "Create",:class=>"btn btn-primary" %>
+<%end%>

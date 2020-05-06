@@ -1,0 +1,11 @@
+<h1>Transactions#index</h1>
+<%if @user.transactions.exists?%>
+    <%@user.transactions.each do |transaction|%>
+        <%=transaction.name%><br>
+        <%="$#{transaction.amount}"%><br>
+        <hr>
+    <%end%>
+<%else%>
+    <h6>No transactions found</h6>
+<%end%>
+<%=link_to "create new", new_user_transaction_path, :class=> "btn",:id=>"button-login"%>

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  
-  def index
-  end
+    def show
+        @user = User.includes(:groups,:transactions).find(current_user.id)
+    end
 end

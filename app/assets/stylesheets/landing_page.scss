@@ -1,0 +1,47 @@
+// Place all the styles related to the landing_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$bl: #3778c2;
+$dark-bl: #0a376b;
+$gr: #5fb523;
+$gra: #434b54;
+$nova_bold: "Proxima Nova Rg";
+$nova_light: "Proxima Nova Lt";
+
+.main-splash-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.landing-logo {
+    margin-top: 10vh;
+    h1{
+        font-family: $nova_bold;
+        text-align: center;
+    }
+}
+
+#button-login {
+    font-family: $nova_light;
+    width: 80%;
+    background-color:$bl !important;
+    color: white !important;
+    margin-bottom: 5px;
+    &:hover{
+        background-color: $dark-bl !important;
+        color: white !important;
+    }
+}
+
+#button-sign-up {
+    font-family: $nova_light;
+    width: 80%;
+    color: white !important;
+    color: $gra !important;
+    &:hover{
+        background-color: $gr !important;
+        color: white !important;
+    }
+}

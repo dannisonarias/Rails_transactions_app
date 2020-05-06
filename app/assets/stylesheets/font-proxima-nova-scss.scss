@@ -1,0 +1,25 @@
+$pn-font-path: "./fonts" !default;
+
+@font-face {
+  font-family: "Proxima Nova Lt";
+  src: url("#{$pn-font-path}/ProximaNova-Light.eot");
+  src: local("Proxima Nova Light"), local("ProximaNova-Light"),
+    url("#{$pn-font-path}/ProximaNova-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$pn-font-path}/ProximaNova-Light.woff") format("woff"),
+    url("#{$pn-font-path}/ProximaNova-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Proxima Nova Rg";
+  src: url("#{$pn-font-path}/ProximaNova-Bold.eot");
+  src: local("Proxima Nova Bold"), local("ProximaNova-Bold"),
+    url("#{$pn-font-path}/ProximaNova-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$pn-font-path}/ProximaNova-Bold.woff") format("woff"),
+    url("#{$pn-font-path}/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}

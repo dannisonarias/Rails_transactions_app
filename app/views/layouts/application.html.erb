@@ -4,14 +4,21 @@
     <title>RailsCapstone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="nav justify-content-center">
+    <a class="nav-link" href="#"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
+    <% nav_name = "Log in" if controller_name == "sessions"%>
+    <h5 class="nav-name"><%=nav_name%></h5>
+    <%= link_to "Back", :back %>
+  </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+  <%=console if Rails.env.development?%>
 </html>

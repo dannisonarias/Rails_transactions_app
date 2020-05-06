@@ -11,4 +11,74 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ /*
+ *= require_tree .
+ *= require_self
+ */
  @import "bootstrap";
+
+ //  $pn-font-path: "./fonts" !default;
+ $pn-font-path: "./fonts" !default;
+ $bl: #3778c2;
+  $dark-bl: #0a376b;
+  $gr: #5fb523;
+  $gra: #434b54;
+  $nova_bold: "Proxima Nova Rg";
+  $nova_light: "Proxima Nova Lt";
+
+ @font-face {
+   font-family: "Proxima Nova Lt";
+   src: url("#{$pn-font-path}/ProximaNova-Light.eot");
+   src: local("Proxima Nova Light"), local("ProximaNova-Light"),
+     url("#{$pn-font-path}/ProximaNova-Light.eot?#iefix")
+       format("embedded-opentype"),
+     url("#{$pn-font-path}/ProximaNova-Light.woff") format("woff"),
+     url("#{$pn-font-path}/ProximaNova-Light.ttf") format("truetype");
+   font-weight: 300;
+   font-style: normal;
+ }
+ 
+ @font-face {
+   font-family: "Proxima Nova Rg";
+   src: url("#{$pn-font-path}/ProximaNova-Bold.eot");
+   src: local("Proxima Nova Bold"), local("ProximaNova-Bold"),
+     url("#{$pn-font-path}/ProximaNova-Bold.eot?#iefix")
+       format("embedded-opentype"),
+     url("#{$pn-font-path}/ProximaNova-Bold.woff") format("woff"),
+     url("#{$pn-font-path}/ProximaNova-Bold.ttf") format("truetype");
+   font-weight: bold;
+   font-style: normal;
+ }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $nova_bold !important;
+}
+
+a,p,span,button,article,div {
+  font-family: $nova_light !important;
+}
+
+nav {
+
+  display: flex;
+  background-color: $bl;
+  white-space: nowrap;
+  a{
+    white-space: nowrap;
+    color: white;
+    margin :auto;
+  }
+  a:first-of-type{
+    margin: 0;
+    padding-right: 25vw
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+.nav-name{
+    margin: auto;
+    color: white;
+}

@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  get 'users/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-    root to: "users#index"
+  resources :users
+  resources :groups
+  resources :users do
+    resources :transactions, only:[:index,:show,:create,:new]
+  end
+  devise_scope :user do
+    
+    authenticated :user do
+      root 'users#show', as: :authenticated_root
+    end
+  
+    unauthenticated do
+      root 'landing_page#new', as: :unauthenticated_root
+    end
+
+  end
 end
