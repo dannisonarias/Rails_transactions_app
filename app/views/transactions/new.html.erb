@@ -12,5 +12,11 @@
     <%= f.number_field :amount%>
   </div>
 <hr>
+  <div class="field">
+    <span>Choose Category: </span>
+    <%= f.label :group_id %><br/>
+    <%= f.select(:group_id, options_for_select(@group_options)) %>
+  </div>
+<hr>  
   <%= f.submit "Create",:class=>"btn btn-primary" %>
 <%end%>

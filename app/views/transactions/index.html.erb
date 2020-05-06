@@ -1,6 +1,9 @@
 <h1>Transactions#index</h1>
+<h1>Transactions total:</h1>
+<hr>
 <%if @user.transactions.exists?%>
     <%@user.transactions.each do |transaction|%>
+        <%=grouptransaction%>
         <%=transaction.name%><br>
         <%="$#{transaction.amount}"%><br>
         <hr>

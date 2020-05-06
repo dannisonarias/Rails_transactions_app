@@ -4,14 +4,16 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    
   end
 
   def new
     @transaction = Transaction.new()
+    @group_options = Group.all.map{ |u| [ u.name, u.id ] }
   end
 
   def create
-    @transaction = Transaction.new(name:t_params[:name],amount:t_params[:amount],user_id:current_user.id)
+    @transaction = Transaction.new(name:t_params[:name],amount:t_params[:amount],user_id:current_user.id,group_id:t_params[:group_id])
     if @transaction.save
       flash[:success] = "group created!"
       redirect_to user_transactions_path
@@ -22,6 +24,6 @@ class TransactionsController < ApplicationController
   end
 
   def t_params
-    params.require(:transaction).permit(:name,:amount)
+    params.require(:transaction).permit(:name,:amount,:group_id)
   end
 end
