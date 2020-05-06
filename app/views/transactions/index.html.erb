@@ -1,12 +1,18 @@
 <h1>Transactions#index</h1>
-<h1>Transactions total:</h1>
+<h1>Transactions total: $<%=@total%></h1>
 <hr>
 <%if @user.transactions.exists?%>
-    <%@user.transactions.each do |transaction|%>
-        <%=grouptransaction%>
-        <%=transaction.name%><br>
-        <%="$#{transaction.amount}"%><br>
-        <hr>
+    <%@group.each do |group|%>
+        <%@user.transactions.each do |transaction|%>
+            <%if transaction.group_id == group.id%>
+                <%= image_tag(group.icon, size: '35x35') unless !group.icon.attached?%>
+                <p>category:<%=group.name%></p>
+                <%=transaction.name%>
+                <%="$#{transaction.amount}"%>
+                <p>Date: <%=transaction.created_at%></p>
+                <hr>
+            <%end%>
+        <%end%>
     <%end%>
 <%else%>
     <h6>No transactions found</h6>

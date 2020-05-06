@@ -5,7 +5,7 @@
 <p>My Transactions by Category</p>
 <%end%>
 <hr>
-<%=link_to "/" do%>
+<%=link_to user_transactions_path(current_user,category:0) do%>
     <p>My Other Transactions</p>
 <%end%>
 

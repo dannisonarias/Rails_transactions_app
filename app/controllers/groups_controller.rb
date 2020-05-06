@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   def show
   end
   def index
-    @groups = Group.all
+    @groups = Group.where.not(name:"none")
   end
   def new
     @group = Group.new()
