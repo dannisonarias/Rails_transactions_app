@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :groups
+  resources :groups do
+    resources :transactions, only:[:index]
+  end
   resources :users do
     resources :transactions, only:[:index,:show,:create,:new]
   end

@@ -1,15 +1,17 @@
 class TransactionsController < ApplicationController
-  
   def index
     if params[:category] == "0"
-      @group = Group.where(name:"none")
-      @user ||= User.includes(:groups,:transactions).where(:transactions=>{group_id: 1}).find(current_user.id)
-      @total = @user.transactions.where(:group_id=>1).sum(:amount) 
+      @user = User.includes(:groups,:transactions).sort_recent.find(current_user.id)
+      @transactions = @user.transactions.collect{|u| u if u.group_id == 1}
+      @groups = Group.sort_recent.all
+      @total = @user.transactions.where(group_id:1).sum(:amount)
     else
-      @group = Group.where.not(name:"none")
-      @user = User.includes(:transactions).where.not(:transactions=>{group_id: 1}).find(current_user.id)
-      @total = @user.transactions.where.not(:group_id=>1).sum(:amount) 
+      @user = User.includes(:groups,:transactions).sort_recent.find(current_user.id)
+      @transactions = @user.transactions.collect{|u| u if u.group_id != 1}
+      @groups = Group.sort_recent.all
+      @total = @user.transactions.where.not(group_id:1).sum(:amount)
     end
+
   end
 
   def show

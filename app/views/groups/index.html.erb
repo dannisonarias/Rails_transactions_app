@@ -2,8 +2,11 @@
 <%if !@groups.nil?%> 
     <hr/>
     <%@groups.each do |i|%>
-        <%= image_tag(i.icon, size: '75x75')%>
-        <%=i.name%>
+        <%=link_to group_transactions_path(i.id) do%>
+        <%# where(group_id:group.id) %>
+            <%= image_tag(i.icon, size: '75x75')%>
+            <%=i.name%>
+        <%end%>
     <%end%>
     <hr/>
 <%end%>

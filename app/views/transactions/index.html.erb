@@ -2,13 +2,13 @@
 <h1>Transactions total: $<%=@total%></h1>
 <hr>
 <%if @user.transactions.exists?%>
-    <%@group.each do |group|%>
-        <%@user.transactions.each do |transaction|%>
-            <%if transaction.group_id == group.id%>
+    <%@groups.each do |group|%>
+        <%@transactions.each do |transaction|%>
+            <%if transaction.present? && transaction.group_id == group.id%>
                 <%= image_tag(group.icon, size: '35x35') unless !group.icon.attached?%>
                 <p>category:<%=group.name%></p>
                 <%=transaction.name%>
-                <%="$#{transaction.amount}"%>
+                <%="$ #{transaction.amount}"%>
                 <p>Date: <%=transaction.created_at%></p>
                 <hr>
             <%end%>
@@ -17,4 +17,4 @@
 <%else%>
     <h6>No transactions found</h6>
 <%end%>
-<%=link_to "create new", new_user_transaction_path, :class=> "btn",:id=>"button-login"%>
+<%=link_to "create new", new_user_transaction_path, :class=> "btn",:id=>"button-login" %>
