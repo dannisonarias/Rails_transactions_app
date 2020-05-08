@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
   def show
+    @group = Group.find(params[:id])
+    # find transactions with group id of params for show.
+    @transactions = Transaction.where(:group_id=>params[:id])
   end
   def index
     @groups = Group.where.not(name:"none").sort_recent

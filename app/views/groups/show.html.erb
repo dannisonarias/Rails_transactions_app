@@ -1,2 +1,15 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+<div class="d-flex justify-content-center"><%= image_tag(@group.icon, size: '75x75') unless !@group.icon.attached?%>
+<h1><%=@group.name.capitalize%> Expenses</h1></div>
+<%if @transactions.present?%>
+ <div class="container">
+    <%@transactions.each do |transaction|%>
+    <hr>
+    <%=transaction.name%>
+    $<%=transaction.amount%>
+    <p class="date">Date: <%=transaction.created_at.strftime('%Y-%m-%d')%></p>
+    <p>Purchased by: <%=transaction.user.name%></p>
+    <hr>
+    <%end%>
+</div>
+<%end%>
+

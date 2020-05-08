@@ -11,7 +11,6 @@ class TransactionsController < ApplicationController
       @groups = Group.sort_recent.all
       @total = @user.transactions.where.not(group_id:1).sum(:amount)
     end
-
   end
 
   def show

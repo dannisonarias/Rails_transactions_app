@@ -1,16 +1,16 @@
-<h1> groups new model</h2>
+<h1> Create new category</h2>
 
-<%= form_with model: @group,url: groups_path,:method=>"post" do |f| %>
+<div class="container"><%= form_with model: @group,url: groups_path,:method=>"post" do |f| %>
 <hr>
-  <div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name%>
-  </div>
+<div class="field">
+<%= f.label :name %><br/>
+<%= f.text_field :name%>
+</div>
 <hr>
-  <div class="field">
-    <%= f.label :image %><br/>
-    <%= f.file_field :image%>
-  </div>
+<div class="field">
+<%= f.label :image %><br/>
+<%= f.file_field :image%>
+</div>
 <hr>
-  <%= f.submit "Create",:class=>"btn btn-primary" %>
-<%end%>
+<%= f.submit "Create",:class=>"btn button-login" %>
+<%end%></div>

@@ -1,20 +1,27 @@
-<h1>Transactions#index</h1>
-<h1>Transactions total: $<%=@total%></h1>
-<hr>
-<%if @user.transactions.exists?%>
+<div class="container">
+    <h1>Transactions</h1>
+    <h6 >Transactions total: <span class="money">$<%=@total%></span></h6>
+    <hr>
+    <%if @user.transactions.exists?%>
     <%@groups.each do |group|%>
-        <%@transactions.each do |transaction|%>
-            <%if transaction.present? && transaction.group_id == group.id%>
-                <%= image_tag(group.icon, size: '35x35') unless !group.icon.attached?%>
-                <p>category:<%=group.name%></p>
-                <%=transaction.name%>
-                <%="$ #{transaction.amount}"%>
-                <p>Date: <%=transaction.created_at%></p>
-                <hr>
-            <%end%>
-        <%end%>
+    <%@transactions.each do |transaction|%>
+    <%if transaction.present? && transaction.group_id == group.id%>
+    <div class="d-flex">
+        <%= image_tag(group.icon, size: '75x75') unless !group.icon.attached?%>
+        <div>
+        <%=transaction.name.upcase%>
+        <span class="money"><%="$ #{transaction.amount}"%></span>
+        <p class="date">Date: <%=transaction.created_at.strftime('%Y-%m-%d')%></p>
+        </div>
+    </div>
+        <p class="category-name">category: <%=group.name%></p>
+
+    <hr>
     <%end%>
-<%else%>
+    <%end%>
+    <%end%>
+    <%else%>
     <h6>No transactions found</h6>
-<%end%>
+    <%end%>
+</div>
 <%=link_to "create new", new_user_transaction_path, :class=> "btn",:id=>"button-login" %>
