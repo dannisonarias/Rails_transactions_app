@@ -2,10 +2,7 @@
 
 The project is based on an app for grouping payments by category with your family/friends. 
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
-
-
-
+![sample](ss.png)
 ## Built With
 
 - Ruby v2.6.5
