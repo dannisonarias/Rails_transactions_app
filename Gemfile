@@ -8,6 +8,7 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'seed_dumper'
+gem "aws-sdk-s3", require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
