@@ -1,24 +1,88 @@
-# README
+# Group our transactions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The project is based on an app for grouping payments by category with your family/friends. 
 
-Things you may want to cover:
+> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby v2.6.5
+- Ruby on Rails v5.2.4
 
-* Database initialization
+## Live Demo
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+### Prerequisites
 
-* ...
+Ruby: 2.6.3
+Rails: 5.2.3
+Postgres: >=9.5
+
+### Setup
+
+Instal gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+
+
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+```
+    rpsec --format documentation
+```
+
+### Deployment
+
+TBA
+
+## Author
+
+👤 **Dannison Arias**
+
+- Github: [@dannisonarias](https://github.com/dannisonarias)
+- Twitter: [@AriasDannison](https://twitter.com/AriasDannison)
+- Linkedin: [Dannison Arias](https://www.linkedin.com/in/dannison-arias-777919190/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- The Odin Project
+
+## 📝 License
+
+This project is [MIT](./license.md) licensed.
