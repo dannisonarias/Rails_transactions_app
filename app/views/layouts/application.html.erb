@@ -23,6 +23,9 @@
       <div class="d-flex home-back">
         <%= link_to "Home", '/'%>
         <%= link_to "Back",:back%>
+        <%if current_user.present?%>
+          <%= link_to "Sign out #{current_user.name}",destroy_user_session_path,:method => :delete%>
+        <%end%>
       </div>
       <% nav_name = "Log in" if controller_name == "sessions"%>
   </nav>
@@ -39,6 +42,5 @@
   }
   </script>
   </body>
-<%console%>
-
+  <%=console if Rails.env.development?%>
 </html>
