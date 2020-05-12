@@ -10,6 +10,9 @@ Using Heroku with Amazon s3 in production.
 - Ruby on Rails v5.2.4
 - Heroku
 - Amazon s3
+- Active storage
+- Bootstrap
+- Javascript
 
 ## Live Demo
 https://salty-sea-13355.herokuapp.com/
