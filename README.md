@@ -1,13 +1,15 @@
 # Group our transactions
 
 The project is based on an app for grouping transactions by category with your family/friends.
-I am using amazon s3 with heroku for production. 
+Using Heroku with Amazon s3 in production. 
 
 ![sample](ss.png)
 ## Built With
 
 - Ruby v2.6.5
 - Ruby on Rails v5.2.4
+- Heroku
+- Amazon s3
 
 ## Live Demo
 https://salty-sea-13355.herokuapp.com/
