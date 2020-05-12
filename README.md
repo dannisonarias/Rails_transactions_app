@@ -1,6 +1,7 @@
 # Group our transactions
 
-The project is based on an app for grouping payments by category with your family/friends. 
+The project is based on an app for grouping transactions by category with your family/friends.
+I am using amazon s3 with heroku for production. 
 
 ![sample](ss.png)
 ## Built With
@@ -9,7 +10,7 @@ The project is based on an app for grouping payments by category with your famil
 - Ruby on Rails v5.2.4
 
 ## Live Demo
-
+https://salty-sea-13355.herokuapp.com/
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
