@@ -3,12 +3,12 @@ class TransactionsController < ApplicationController
   def index
     if params[:category] == '0'
       @user = User.includes(:groups, :transactions).sort_recent.find(current_user.id)
-      @transactions = @user.transactions.collect { |u| u if u.group_id == 1 }
+      @transactions = @user.transactions.collect { |u| u if u.group_id == -100 }
       @groups = Group.sort_recent.all
       @total = @user.transactions.where(group_id: 1).sum(:amount)
     else
       @user = User.includes(:groups, :transactions).sort_recent.find(current_user.id)
-      @transactions = @user.transactions.collect { |u| u if u.group_id != 1 }
+      @transactions = @user.transactions.collect { |u| u if u.group_id != -100 }
       @groups = Group.sort_recent.all
       @total = @user.transactions.where.not(group_id: 1).sum(:amount)
     end
