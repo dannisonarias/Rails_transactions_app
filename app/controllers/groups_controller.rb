@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  @defaultimage = 
   def show
     @group = Group.find(params[:id])
     # find transactions with group id of params for show.
@@ -15,6 +16,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(user_id: current_user.id, name: group_params[:name], icon: group_params[:image])
+    debugger
+    @group.icon.attach(io: File.open('app/assets/images/category-icons/noimage.png'), filename: 'noimage.png', content_type: 'image/png') if !@group.icon.attached?
+    debugger
     if @group.save
       flash[:success] = 'group created!'
       redirect_to groups_path

@@ -1,25 +1,23 @@
 <div class="container">
   <h1>New Transaction</h1>
-
-
   <%= form_with model: @transaction,url: user_transactions_path,:method=>"post" do |f| %>
-  <hr>
-  <div class="field">
-  <%= f.label :name %><br/>
-  <%= f.text_field :name, :required => true%>
-  </div>
-  <hr>
-  <div class="field">
-  <%= f.label :amount %><br/>
-  <%= f.number_field :amount, :required => true%>
-  </div>
-  <hr>
-  <div class="field">
-  <span>Choose Category: </span>
-  <%= f.label :group_id %><br/>
-  <%= f.select(:group_id, options_for_select(@group_options)) %>
-  </div>
-  <hr>
-  <%= f.submit "Create New Transaction",:class=>"btn button-login" %>
+    <hr>
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name, :required => true%>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :amount %><br/>
+      <%= f.number_field :amount, :required => true%>
+    </div>
+    <hr>
+    <div class="field">
+      <span>Choose Category: </span>
+      <%= f.label :group_id %><br/>
+      <%= f.select(:group_id, options_for_select(@group_options)) %>
+    </div>
+    <hr>
+    <%= f.submit "Create New Transaction",:class=>"btn button-login" %>
   <%end%>
 </div>
