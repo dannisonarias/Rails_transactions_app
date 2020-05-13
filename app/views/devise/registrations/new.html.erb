@@ -4,32 +4,24 @@
   <%= render "devise/shared/error_messages", resource: resource %>
    <div class="field">
     <%= f.label :image,:class=>"hidden"%>
-    <%= f.file_field :image,:required => true %>
+    <%= f.file_field :image%>
   </div>
-
   <div class="field">
     <%= f.label :name ,:class=>"hidden" %><br/>
     <%= f.text_field :name,:placeholder=>"Name"%>
   </div>
-<hr>
   <div class="field">
     <%= f.label :email ,:class=>"hidden" %><br />
     <%= f.email_field :email, autocomplete: "email",:placeholder=>"Email" %>
   </div>
-<hr>
   <div class="field">
     <%= f.label :password ,:class=>"hidden" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password",:placeholder=>"Password" %>
   </div>
-<hr>
   <div class="field">
     <%= f.label :password_confirmation ,:class=>"hidden" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password",:placeholder=>"Confirm Password" %>
   </div>
-<hr>
   <div class="actions">
     <%= f.submit "Sign up", :class=>"button-login"%>
   </div>

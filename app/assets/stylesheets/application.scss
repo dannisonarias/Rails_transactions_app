@@ -69,3 +69,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
