@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.where.not(name: 'none').sort_recent
+    @groups = Group.with_attached_icon.where.not(name: 'none').sort_recent
   end
 
   def new
