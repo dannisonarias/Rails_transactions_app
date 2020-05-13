@@ -71,5 +71,7 @@ nav {
 }
 
 textarea:focus, input:focus{
-  outline: none;
+  outline: fade-out($color: $gr, $amount: 0);
 }
+
+
