@@ -23,12 +23,12 @@ $nova_light: "Proxima Nova Lt";
     }
 }
 
-#button-login {
+#button-login-landing {
     font-family: $nova_light;
     width: 80%;
     background-color:$bl !important;
     color: white !important;
-    margin-bottom: 5px;
+    margin-bottom: 5px auto !important;
     &:hover{
         background-color: $gr !important;
         color: white !important;
