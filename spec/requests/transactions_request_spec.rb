@@ -18,7 +18,6 @@ RSpec.describe 'Transactions', type: :request do
       fill_in 'transaction[amount]', with: '50'
       click_button(name: 'commit')
       visit '/users/1/transactions?category=0'
-
       expect(page).to have_css('.money')
     end
   end
