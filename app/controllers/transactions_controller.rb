@@ -33,7 +33,6 @@ class TransactionsController < ApplicationController
   def t_params
     params.require(:transaction).permit(:name, :amount, :group_id)
   end
-
 end
 
 # rubocop:enable Style/IdenticalConditionalBranches, Layout/LineLength

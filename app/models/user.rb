@@ -10,6 +10,7 @@ class User < ApplicationRecord
   # rubocop:disable  Layout/LineLength
   def set_default_avatar
     return if image.attached?
+
     image.attach(io: File.open('app/assets/images/category-icons/noimage.png'), filename: 'noimage.png', content_type: 'image/png')
   end
   # rubocop:enable  Layout/LineLength
