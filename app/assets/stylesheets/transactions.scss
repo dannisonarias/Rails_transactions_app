@@ -27,7 +27,7 @@ h6 {
     }
 }
 
-h4{
+h4 {
     text-align: right;
 }
 
@@ -37,4 +37,10 @@ h4{
 
 .category-name {
     text-align: end;
+    margin-right: 10px;
+}
+
+.transaction-wrapper {
+    background: rgb(255,255,255);
+    background: linear-gradient(6deg, rgba(255,255,255,1) 3%, rgba(242,242,242,0.8071603641456583) 100%);
 }
