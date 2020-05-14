@@ -3,7 +3,7 @@
 The project is based on an app for grouping transactions by category with your family/friends.
 Using Heroku with Amazon s3 in production. This application is meant to used on mobile display only. (please use mobile resolution for best experience)
 
-# Video presentation
+# 2 minute Video presentation
 
 https://www.loom.com/share/91a457d9d68b4174812c760f113440c4
 
