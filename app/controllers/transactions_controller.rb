@@ -22,7 +22,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(name: t_params[:name], amount: t_params[:amount], user_id: current_user.id, group_id: t_params[:group_id])
     if @transaction.save
-      flash[:success] = 'group created!'
+      flash[:success] = 'Transaction created!'
       redirect_to '/'
     else
       flash[:warning] = 'error!'

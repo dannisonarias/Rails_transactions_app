@@ -8,10 +8,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body >
     <nav class="nav ">
-    <%if current_user.present?%>
+      <%if current_user.present?%>
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <%=link_to 'Home', '/'%>
@@ -28,19 +27,23 @@
         <%end%>
       </div>
       <% nav_name = "Log in" if controller_name == "sessions"%>
-  </nav>
-
+    </nav>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%=type%> text-center">
+        <%= msg %>
+      </div>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
   </body>
 </html>
