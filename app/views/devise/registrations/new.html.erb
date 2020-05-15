@@ -1,33 +1,31 @@
 <h2 class="text-center">Sign Up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-   <div class="field">
-    <label class="btn btn-primary" for="user_image"> Upload Profile Icon</label>
-    <%= f.file_field :image, :class=>"hidden"%>
-  </div>
-  <div class="field">
-    <%= f.label :name ,:class=>"hidden" %>
-    <%= f.text_field :name,:placeholder=>"  Name"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :email ,:class=>"hidden" %>
-    <%= f.email_field :email, autocomplete: "email",:placeholder=>"  Email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password ,:class=>"hidden" %>
-    <%= f.password_field :password, autocomplete: "new-password",:placeholder=>"  Password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation ,:class=>"hidden" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",:placeholder=>"  Confirm Password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up", :class=>"btn button-login sign-up-btn"%>
-  </div>
-<% end %>
-<hr>
-<%= render "devise/shared/links" %>
+<div id="form-center">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <label class="btn btn-primary" for="user_image"> Upload Profile Icon</label>
+      <%= f.file_field :image, :class=>"hidden"%>
+    </div>
+    <div class="field">
+      <%= f.label :name ,:class=>"hidden" %>
+      <%= f.text_field :name,:placeholder=>"  Name"%>
+    </div>
+    <div class="field">
+      <%= f.label :email ,:class=>"hidden" %>
+      <%= f.email_field :email, autocomplete: "email",:placeholder=>"  Email" %>
+    </div>
+    <div class="field">
+      <%= f.label :password ,:class=>"hidden" %>
+      <%= f.password_field :password, autocomplete: "new-password",:placeholder=>"  Password" %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation ,:class=>"hidden" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",:placeholder=>"  Confirm Password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign up", :class=>"btn button-login sign-up-btn"%>
+    </div>
+  <% end %>
+  <hr>
+  <%= render "devise/shared/links" %>
+</div>

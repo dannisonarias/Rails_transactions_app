@@ -84,6 +84,11 @@ nav {
 }
 
 .form1 {
-  width: 85%;
+  width: 85% !important;
+  margin: 0 auto;
+}
+
+#form-center {
+  width: 60%;
   margin: 0 auto;
 }
