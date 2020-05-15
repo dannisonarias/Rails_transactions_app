@@ -57,11 +57,15 @@ nav {
 }
 
 .home-back{
-  width: 80%;
+  width: 100%;
   white-space: nowrap;
   flex-wrap: nowrap;
-  margin: auto 0 !important;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding-left: 75px;
+  padding-right: 75px;
+  a {
+    align-self: center;
+  }
 }
 
 #profile-icon {
