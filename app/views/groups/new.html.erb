@@ -1,5 +1,6 @@
 <h1> Create new category</h2>
-<div class="container"><%= form_with model: @group,url: groups_path,:method=>"post" do |f| %>
+<div class="container">
+  <%= form_with model: @group,url: groups_path,:method=>"post" do |f| %>
     <hr>
     <div class="field">
       <%= f.label :name ,:class=>"hidden" %><br/>
@@ -12,4 +13,5 @@
     </div>
     <hr>
     <%= f.submit "Create",:class=>"btn button-login" %>
-  <%end%></div>
+  <%end%>
+</div>

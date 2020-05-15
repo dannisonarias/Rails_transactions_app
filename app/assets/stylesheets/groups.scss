@@ -15,10 +15,14 @@ $gra: #434b54;
     width: 100%;
     background-color:$bl !important;
     color: white !important;
-    margin-bottom: 5px;
+    margin: 5px auto;
     &:hover{
         background-color: $gr !important;
         color: white !important;
     }
+}
+
+.create-link {
+    font-weight: 600;
 }
 

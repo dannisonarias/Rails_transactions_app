@@ -14,16 +14,15 @@
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <%=link_to 'Home', '/'%>
+          <%=link_to "My Transactions by Category", user_transactions_path(current_user)%>
           <%=link_to "Create new Transaction", new_user_transaction_path(current_user) %>
           <%=link_to "Create new Category", new_group_path%>
+          <%= link_to "Sign out #{current_user.name}",destroy_user_session_path,:method => :delete%>
         </div>
       <%end%>
       <div class="d-flex home-back">
         <span class="burger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
         <%= link_to "Home", '/'%>
-        <%if current_user.present?%>
-          <%= link_to "Sign out #{current_user.name}",destroy_user_session_path,:method => :delete%>
-        <%end%>
         <%= link_to "Back",:back%>
       </div>
       <% nav_name = "Log in" if controller_name == "sessions"%>

@@ -23,5 +23,7 @@
   <%else%>
     <h6>No transactions found</h6>
   <%end%>
+  <hr>
+  <%=link_to "Create new", new_user_transaction_path, :class=> "create-link"%>
 </div>
-<%=link_to "Create new", new_user_transaction_path, :class=> "btn",:id=>"button-login-landing" %>
+

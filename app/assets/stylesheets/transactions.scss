@@ -20,11 +20,15 @@ h6 {
     width: 100%;
     background-color:$bl !important;
     color: white !important;
-    margin-bottom: 5px;
+    margin: 5px auto;
     &:hover{
         background-color: $gr !important;
         color: white !important;
     }
+}
+
+.create-link {
+    font-weight: 600;
 }
 
 h4 {
@@ -33,6 +37,11 @@ h4 {
 
 .money {
     color: $gr;
+}
+
+.select-box {
+    background-color: blue;
+    color: red;
 }
 
 .category-name {
@@ -44,3 +53,4 @@ h4 {
     background: rgb(255,255,255);
     background: linear-gradient(6deg, rgba(255,255,255,1) 3%, rgba(242,242,242,0.8071603641456583) 100%);
 }
+
