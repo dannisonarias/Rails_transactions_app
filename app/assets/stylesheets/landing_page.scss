@@ -9,40 +9,43 @@ $nova_bold: "Proxima Nova Rg";
 $nova_light: "Proxima Nova Lt";
 
 .main-splash-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
 }
 
 .landing-logo {
-    margin-top: 10vh;
-    h1{
-        font-family: $nova_bold;
-        text-align: center;
-    }
+  margin-top: 10vh;
+
+  h1 {
+    font-family: $nova_bold;
+    text-align: center;
+  }
 }
 
 #button-login-landing {
-    font-family: $nova_light;
-    width: 80%;
-    background-color:$bl !important;
+  font-family: $nova_light;
+  width: 80%;
+  background-color: $bl !important;
+  color: white !important;
+  margin-bottom: 5px auto !important;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: $gr !important;
     color: white !important;
-    margin-bottom: 5px auto !important;
-    margin-top: 10px;
-    &:hover{
-        background-color: $gr !important;
-        color: white !important;
-    }
+  }
 }
 
 #button-sign-up {
-    font-family: $nova_light;
-    width: 80%;
+  font-family: $nova_light;
+  width: 80%;
+  color: white !important;
+  color: $gra !important;
+
+  &:hover {
+    background-color: $gr !important;
     color: white !important;
-    color: $gra !important;
-    &:hover{
-        background-color: $gr !important;
-        color: white !important;
-    }
+  }
 }

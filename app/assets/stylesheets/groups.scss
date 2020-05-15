@@ -9,20 +9,18 @@ $dark-bl: #0a376b;
 $gr: #5fb523;
 $gra: #434b54;
 
-
-
 .button-login {
-    width: 100%;
-    background-color:$bl !important;
+  width: 100%;
+  background-color: $bl !important;
+  color: white !important;
+  margin: 5px auto;
+
+  &:hover {
+    background-color: $gr !important;
     color: white !important;
-    margin: 5px auto;
-    &:hover{
-        background-color: $gr !important;
-        color: white !important;
-    }
+  }
 }
 
 .create-link {
-    font-weight: 600;
+  font-weight: 600;
 }
-
