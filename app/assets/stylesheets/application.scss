@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+$bl: #3778c2;
+$dark-bl: #0a376b;
+$gr: #5fb523;
+$gra: #434b54;
+$nova_bold: "Helvetica";
+$nova_light: "Helvetica";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $nova_bold !important;
+  font-weight: 700;
+}
+
+a,
+p,
+span,
+button,
+article,
+div {
+  font-family: $nova_light !important;
+}
+
+nav {
+  display: flex;
+  background: rgb(82, 150, 227);
+  background: linear-gradient(16deg, rgba(82, 150, 227, 1) 3%, rgba(73, 140, 215, 1) 9%, rgba(66, 127, 197, 1) 22%, rgba(54, 111, 176, 1) 50%, rgba(45, 104, 172, 1) 76%, rgba(37, 70, 150, 1) 100%);
+  white-space: nowrap;
+
+  a {
+    white-space: nowrap;
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+.nav-name {
+  margin: auto;
+  color: white;
+}
+
+.home-back {
+  width: 100%;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 30px;
+
+  a {
+    align-self: center;
+  }
+}
+
+#profile-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form1 {
+  width: 85% !important;
+  margin: 0 auto;
+}
+
+#form-center {
+  width: 60%;
+  margin: 0 auto;
+}

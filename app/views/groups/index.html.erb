@@ -1,0 +1,19 @@
+<h1>All categories</h1>
+<hr/>
+<div class="container">
+  <%if !@groups.nil?%>
+    <div class="row">
+      <%@groups.each do |i|%>
+        <div class="col-5">
+          <%=link_to group_path(i.id) do%>
+            <%= image_tag(i.icon, size: '50x50')%>
+            <%=i.name%>
+          </div>
+          <hr/>
+        <%end%>
+      <%end%>
+    </div>
+  <%end%>
+  <hr>
+  <%=link_to "Create New Category", new_group_path,:class=>"create-link"%>
+</div>

@@ -1,0 +1,26 @@
+// Place all the styles related to the groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$bl: #3778c2;
+$dark-bl: #0a376b;
+$gr: #5fb523;
+$gra: #434b54;
+
+.button-login {
+  width: 100%;
+  background-color: $bl !important;
+  color: white !important;
+  margin: 5px auto;
+
+  &:hover {
+    background-color: $gr !important;
+    color: white !important;
+  }
+}
+
+.create-link {
+  font-weight: 600;
+}

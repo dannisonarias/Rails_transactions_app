@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsCapstone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body >
+    <nav class="nav ">
+      <%if current_user.present?%>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <%=link_to 'Home', '/'%>
+          <%=link_to "My Transactions by Category", user_transactions_path(current_user)%>
+          <%=link_to "Create new Transaction", new_user_transaction_path(current_user) %>
+          <%=link_to "Create new Category", new_group_path%>
+          <%= link_to "Sign out #{current_user.name}",destroy_user_session_path,:method => :delete%>
+        </div>
+      <%end%>
+      <div class="d-flex home-back">
+        <span class="burger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+        <%= link_to "Home", '/'%>
+        <%= link_to "Back",:back%>
+      </div>
+      <% nav_name = "Log in" if controller_name == "sessions"%>
+    </nav>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%=type%> text-center">
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= yield %>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>

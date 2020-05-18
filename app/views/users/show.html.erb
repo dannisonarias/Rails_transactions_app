@@ -1,0 +1,20 @@
+<div class ="container">
+  <div class="form1 home-page">
+    <%= image_tag(current_user.image, size: '100x100',:id=>"profile-icon") unless current_user.image.nil? %>
+    <h5 class="text-center">
+      <%=current_user.name%>
+    </h5>
+    <hr>
+    <%=link_to user_transactions_path(current_user) do%>
+      <p>My Transactions by Category</p>
+    <%end%>
+    <hr>
+    <%=link_to user_transactions_path(current_user,category:0) do%>
+      <p>My Other Transactions</p>
+    <%end%>
+    <hr>
+    <%=link_to groups_path() do%>
+      <p>Show Categories</p>
+    <%end%>
+  </div>
+</div>

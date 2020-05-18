@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Transactions</h1>
+  <h6 >Transactions total: <span class="money">$<%=@total%></span></h6>
+  <hr>
+  <%if @user.transactions.exists?%>
+    <%@groups.each do |group|%>
+      <%@transactions.each do |transaction|%>
+        <%if transaction.present? && transaction.group_id == group.id%>
+          <div class="transaction-wrapper">
+            <div class="d-flex">
+              <%= image_tag(group.icon, size: '75x75') unless !group.icon.attached?%>
+              <div>
+                <%=transaction.name.upcase%>
+                <span class="money"><%="$ #{transaction.amount}"%></span>
+                <p class="date">Date: <%=transaction.created_at.strftime('%Y-%m-%d')%></p>
+              </div>
+            </div>
+            <p class="category-name">category: <%=group.name%></p>
+          </div>
+        <%end%>
+      <%end%>
+    <%end%>
+  <%else%>
+    <h6>No transactions found</h6>
+  <%end%>
+  <hr>
+  <%=link_to "Create new", new_user_transaction_path, :class=> "create-link"%>
+</div>
